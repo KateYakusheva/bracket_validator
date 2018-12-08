@@ -1,16 +1,16 @@
 all: brackets
 
-brackets: main stack validator
-	g++ -std=c++11 main.o Stack.o Validator.o -o brackets
+brackets: stack.o validator.o main.o 
+	g++ -std=c++98 main.o stack.o validator.o -o brackets
 
-main: main.cpp
-	g++ -std=c++11 -c main.cpp
+main.o: main.cpp
+	g++ -std=c++98 -c main.cpp -o main.o
 
-stack: Stack.h Stack.cpp
-	g++ -std=c++11 -c Stack.cpp
+stack.o: Stack.h Stack.cpp
+	g++ -std=c++98 -c Stack.cpp -o stack.o
 
-validator: Validator.h Validator.cpp
-	g++ -std=c++11 -c Validator.cpp
+validator.o: Validator.h Validator.cpp
+	g++ -std=c++98 -c Validator.cpp -o validator.o
 
 clean:
 	rm -rf *.o *.gch brackets

@@ -1,7 +1,7 @@
 #include "Stack.h"
 
 bool Stack::IsEmpty() {
-    return this->head == nullptr;
+    return this->head == 0;
 }
 
 int Stack::Head() {
@@ -18,7 +18,7 @@ void Stack::Push(int data) {
     StackItem *newElement = new StackItem;
     newElement->data = data;
     
-    if (this->head == nullptr) {
+    if (this->head == 0) {
         this->head = newElement;
         return;
     }
